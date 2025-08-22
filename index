@@ -84,7 +84,6 @@ span {
   </span><span class="sc1">&lt;/style&gt;</span><span class="sc0">
 </span><span class="sc1">&lt;/head&gt;</span><span class="sc0">
 </span><span class="sc1">&lt;body&gt;</span><span class="sc0">
-
   </span><span class="sc9">&lt;!-- Login-Bereich --&gt;</span><span class="sc0">
   </span><span class="sc1">&lt;div</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"login"</span><span class="sc1">&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;h2&gt;</span><span class="sc0">Login</span><span class="sc1">&lt;/h2&gt;</span><span class="sc0">
@@ -93,31 +92,25 @@ span {
     </span><span class="sc1">&lt;button</span><span class="sc8"> </span><span class="sc3">onclick</span><span class="sc8">=</span><span class="sc6">"login()"</span><span class="sc1">&gt;</span><span class="sc0">Einloggen</span><span class="sc1">&lt;/button&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;p</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"loginError"</span><span class="sc8"> </span><span class="sc3">style</span><span class="sc8">=</span><span class="sc6">"color:red;"</span><span class="sc1">&gt;&lt;/p&gt;</span><span class="sc0">
   </span><span class="sc1">&lt;/div&gt;</span><span class="sc0">
-
   </span><span class="sc9">&lt;!-- Hauptseite --&gt;</span><span class="sc0">
   </span><span class="sc1">&lt;div</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"main"</span><span class="sc8"> </span><span class="sc3">class</span><span class="sc8">=</span><span class="sc6">"hidden"</span><span class="sc1">&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;h2&gt;</span><span class="sc0">Systemsteuerung</span><span class="sc1">&lt;/h2&gt;</span><span class="sc0">
-
     </span><span class="sc1">&lt;h3&gt;</span><span class="sc0">🖥️ PC-Zeitsteuerung
       </span><span class="sc1">&lt;span</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"pcStatus"</span><span class="sc8"> </span><span class="sc3">class</span><span class="sc8">=</span><span class="sc6">"status offline"</span><span class="sc1">&gt;</span><span class="sc0">Offline</span><span class="sc1">&lt;/span&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;/h3&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;label&gt;</span><span class="sc0">Startzeit: </span><span class="sc1">&lt;input</span><span class="sc8"> </span><span class="sc3">type</span><span class="sc8">=</span><span class="sc6">"time"</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"pcStart"</span><span class="sc1">&gt;&lt;/label&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;label&gt;</span><span class="sc0">Endzeit: </span><span class="sc1">&lt;input</span><span class="sc8"> </span><span class="sc3">type</span><span class="sc8">=</span><span class="sc6">"time"</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"pcEnd"</span><span class="sc1">&gt;&lt;/label&gt;</span><span class="sc0">
-
     </span><span class="sc1">&lt;h3&gt;</span><span class="sc0">🎮 Minecraft-Server
       </span><span class="sc1">&lt;span</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"mcStatus"</span><span class="sc8"> </span><span class="sc3">class</span><span class="sc8">=</span><span class="sc6">"status offline"</span><span class="sc1">&gt;</span><span class="sc0">Offline</span><span class="sc1">&lt;/span&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;/h3&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;label&gt;</span><span class="sc0">Startzeit: </span><span class="sc1">&lt;input</span><span class="sc8"> </span><span class="sc3">type</span><span class="sc8">=</span><span class="sc6">"time"</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"mcStart"</span><span class="sc1">&gt;&lt;/label&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;label&gt;</span><span class="sc0">Endzeit: </span><span class="sc1">&lt;input</span><span class="sc8"> </span><span class="sc3">type</span><span class="sc8">=</span><span class="sc6">"time"</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"mcEnd"</span><span class="sc1">&gt;&lt;/label&gt;</span><span class="sc0">
-
     </span><span class="sc1">&lt;button</span><span class="sc8"> </span><span class="sc3">onclick</span><span class="sc8">=</span><span class="sc6">"saveSettings()"</span><span class="sc1">&gt;</span><span class="sc0">Speichern</span><span class="sc1">&lt;/button&gt;</span><span class="sc0">
     </span><span class="sc1">&lt;p</span><span class="sc8"> </span><span class="sc3">id</span><span class="sc8">=</span><span class="sc6">"statusMessage"</span><span class="sc8"> </span><span class="sc3">style</span><span class="sc8">=</span><span class="sc6">"color:green;"</span><span class="sc1">&gt;&lt;/p&gt;</span><span class="sc0">
   </span><span class="sc1">&lt;/div&gt;</span><span class="sc0">
-
   </span><span class="sc1">&lt;script&gt;</span><span class="sc40">
 </span><span class="sc41">    </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">validUser</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc48">"admin"</span><span class="sc50">;</span><span class="sc41">
     </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">validPass</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc48">"passwort123"</span><span class="sc50">;</span><span class="sc41">
-
     </span><span class="sc47">function</span><span class="sc41"> </span><span class="sc46">login</span><span class="sc50">()</span><span class="sc41"> </span><span class="sc50">{</span><span class="sc41">
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">user</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"username"</span><span class="sc50">).</span><span class="sc46">value</span><span class="sc50">;</span><span class="sc41">
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">pass</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"password"</span><span class="sc50">).</span><span class="sc46">value</span><span class="sc50">;</span><span class="sc41">
@@ -129,28 +122,22 @@ span {
         </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"loginError"</span><span class="sc50">).</span><span class="sc46">textContent</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc48">"Falsche Zugangsdaten!"</span><span class="sc50">;</span><span class="sc41">
       </span><span class="sc50">}</span><span class="sc41">
     </span><span class="sc50">}</span><span class="sc41">
-
     </span><span class="sc47">function</span><span class="sc41"> </span><span class="sc46">saveSettings</span><span class="sc50">()</span><span class="sc41"> </span><span class="sc50">{</span><span class="sc41">
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">pcStart</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"pcStart"</span><span class="sc50">).</span><span class="sc46">value</span><span class="sc50">;</span><span class="sc41">
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">pcEnd</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"pcEnd"</span><span class="sc50">).</span><span class="sc46">value</span><span class="sc50">;</span><span class="sc41">
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">mcStart</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"mcStart"</span><span class="sc50">).</span><span class="sc46">value</span><span class="sc50">;</span><span class="sc41">
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">mcEnd</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"mcEnd"</span><span class="sc50">).</span><span class="sc46">value</span><span class="sc50">;</span><span class="sc41">
-
       </span><span class="sc43">// Hier würdest du die Daten ans Backend senden</span><span class="sc41">
       </span><span class="sc46">console.log</span><span class="sc50">(</span><span class="sc48">"PC Start:"</span><span class="sc50">,</span><span class="sc41"> </span><span class="sc46">pcStart</span><span class="sc50">,</span><span class="sc41"> </span><span class="sc48">"Ende:"</span><span class="sc50">,</span><span class="sc41"> </span><span class="sc46">pcEnd</span><span class="sc50">);</span><span class="sc41">
       </span><span class="sc46">console.log</span><span class="sc50">(</span><span class="sc48">"MC Start:"</span><span class="sc50">,</span><span class="sc41"> </span><span class="sc46">mcStart</span><span class="sc50">,</span><span class="sc41"> </span><span class="sc48">"Ende:"</span><span class="sc50">,</span><span class="sc41"> </span><span class="sc46">mcEnd</span><span class="sc50">);</span><span class="sc41">
-
       </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"statusMessage"</span><span class="sc50">).</span><span class="sc46">textContent</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc48">"Einstellungen gespeichert!"</span><span class="sc50">;</span><span class="sc41">
     </span><span class="sc50">}</span><span class="sc41">
-
     </span><span class="sc47">function</span><span class="sc41"> </span><span class="sc46">updateStatus</span><span class="sc50">()</span><span class="sc41"> </span><span class="sc50">{</span><span class="sc41">
       </span><span class="sc43">// Diese Funktion simuliert den Status. Später durch echte API ersetzen!</span><span class="sc41">
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">pcOnline</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc47">true</span><span class="sc50">;</span><span class="sc41">  </span><span class="sc43">// Beispielwert</span><span class="sc41">
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">mcOnline</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc47">false</span><span class="sc50">;</span><span class="sc41"> </span><span class="sc43">// Beispielwert</span><span class="sc41">
-
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">pcStatus</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"pcStatus"</span><span class="sc50">);</span><span class="sc41">
       </span><span class="sc47">const</span><span class="sc41"> </span><span class="sc46">mcStatus</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc46">document.getElementById</span><span class="sc50">(</span><span class="sc48">"mcStatus"</span><span class="sc50">);</span><span class="sc41">
-
       </span><span class="sc47">if</span><span class="sc41"> </span><span class="sc50">(</span><span class="sc46">pcOnline</span><span class="sc50">)</span><span class="sc41"> </span><span class="sc50">{</span><span class="sc41">
         </span><span class="sc46">pcStatus.textContent</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc48">"Online"</span><span class="sc50">;</span><span class="sc41">
         </span><span class="sc46">pcStatus.classList.remove</span><span class="sc50">(</span><span class="sc48">"offline"</span><span class="sc50">);</span><span class="sc41">
@@ -160,7 +147,6 @@ span {
         </span><span class="sc46">pcStatus.classList.remove</span><span class="sc50">(</span><span class="sc48">"online"</span><span class="sc50">);</span><span class="sc41">
         </span><span class="sc46">pcStatus.classList.add</span><span class="sc50">(</span><span class="sc48">"offline"</span><span class="sc50">);</span><span class="sc41">
       </span><span class="sc50">}</span><span class="sc41">
-
       </span><span class="sc47">if</span><span class="sc41"> </span><span class="sc50">(</span><span class="sc46">mcOnline</span><span class="sc50">)</span><span class="sc41"> </span><span class="sc50">{</span><span class="sc41">
         </span><span class="sc46">mcStatus.textContent</span><span class="sc41"> </span><span class="sc50">=</span><span class="sc41"> </span><span class="sc48">"Online"</span><span class="sc50">;</span><span class="sc41">
         </span><span class="sc46">mcStatus.classList.remove</span><span class="sc50">(</span><span class="sc48">"offline"</span><span class="sc50">);</span><span class="sc41">
@@ -172,7 +158,6 @@ span {
       </span><span class="sc50">}</span><span class="sc41">
     </span><span class="sc50">}</span><span class="sc41">
   </span><span class="sc1">&lt;/script&gt;</span><span class="sc0">
-
 </span><span class="sc1">&lt;/body&gt;</span><span class="sc0">
 </span><span class="sc1">&lt;/html&gt;</span><span class="sc0">
 </span></div></body>
