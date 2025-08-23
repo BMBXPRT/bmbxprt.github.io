@@ -38,7 +38,7 @@
     <h2>Login</h2>
     <label>Benutzername: <input type="text" id="adname"></label>
     <label>Passwort: <input type="password" id="adpass"></label>
-    <button onclick="login()">Einloggen</button>
+    <button onclick="adLogin()">Einloggen</button>
     <p id="loginError" style="color:red;"></p>
     <h3>🎮 Minecraft-Server</h3>
 	<h4> Vanilla Surivial - 16 Spieler
@@ -61,8 +61,6 @@
     function login() {
       const user = document.getElementById("username").value;
       const pass = document.getElementById("password").value;
-	  const admin = document.getElementById("adname").value;
-	  const adpass = document.getElementById("adpassword").value;
       if (user === validUser && pass === validPass) {
         document.getElementById("login").classList.add("hidden");
         document.getElementById("main").classList.remove("hidden");
@@ -70,6 +68,9 @@
       } else {
         document.getElementById("loginError").textContent = "Falsche Zugangsdaten!";
       }
+	 function adLogin() {
+	  const admin = document.getElementById("adname").value;
+	  const adpass = document.getElementById("adpassword").value;
 	  if (admin === validAdmin && adpass === validAdpass) {
         document.getElementById("main").classList.add("hidden");
         document.getElementById("main").classList.remove("hidden");
