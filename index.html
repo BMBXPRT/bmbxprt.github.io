@@ -37,9 +37,9 @@
     </h3>
     <h4>Login</h4>
     <label>Benutzername: <input type="text" id="adname"></label>
-    <label>Passwort: <input type="password" id="adpass"></label>
+    <label>Passwort: <input type="password" id="adpassword"></label>
     <button onclick="adLogin()">Einloggen</button>
-    <p id="loginError" style="color:red;"></p>
+    <p id="adnimLoginError" style="color:red;"></p>
     <h3>🎮 Minecraft - Server</h3>
 	<h4> Vanilla Survival - 16 Spieler
 		<span id="mcStatus" class="status offline">Offline</span>
@@ -75,22 +75,22 @@
 	  const admin = document.getElementById("adname").value;
 	  const adpass = document.getElementById("adpassword").value;
 	  if (admin === validAdmin && adpass === validAdpass) {
-        document.getElementById("main").classList.add("hidden");
-        document.getElementById("main").classList.remove("hidden");
+        //document.getElementById("main").classList.add("hidden");
+        //document.getElementById("main").classList.remove("hidden");
         updateStatus(); // Status beim Login aktualisieren
       } else {
-        document.getElementById("loginError").textContent = "Falsche Zugangsdaten!";
+        document.getElementById("adminLoginError").textContent = "Falsche Zugangsdaten!";
       }
     }
     function saveSettings() {
-      const pcStart = document.getElementById("pcStart").value;
-      const pcEnd = document.getElementById("pcEnd").value;
+      //const pcStart = document.getElementById("pcStart").value;
+      //const pcEnd = document.getElementById("pcEnd").value;
       const mcStart = document.getElementById("mcStart").value;
       const mcEnd = document.getElementById("mcEnd").value;
 	  const ttt2Start = document.getElementById("ttt2Start").value;
 	  const ttt2End = document.getElementById("ttt2End").value;
       // Hier würdest du die Daten ans Backend senden
-      console.log("PC Start:", pcStart, "Ende:", pcEnd);
+      //console.log("PC Start:", pcStart, "Ende:", pcEnd);
       console.log("MC Start:", mcStart, "Ende:", mcEnd);
 	  console.log("TTT2 Start:", ttt2Start, "Ende:", ttt2End);
       document.getElementById("statusMessage").textContent = "Einstellungen gespeichert!";
@@ -102,7 +102,7 @@
 	  const ttt2Online = true;
       const pcStatus = document.getElementById("pcStatus");
       const mcStatus = document.getElementById("mcStatus");
-	  const ttt2Status = doucment.getElementById("ttt2Status");
+	  const ttt2Status = document.getElementById("ttt2Status");
       if (pcOnline) {
         pcStatus.textContent = "Online";
         pcStatus.classList.remove("offline");
