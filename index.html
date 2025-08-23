@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Systemsteuerung</title>
+  <title>BMBXPRT - Server</title>
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
     .hidden { display: none; }
@@ -35,24 +35,43 @@
     <h3>🖥️ PC-Zeitsteuerung
       <span id="pcStatus" class="status offline">Offline</span>
     </h3>
-    <label>Startzeit: <input type="time" id="pcStart"></label>
-    <label>Endzeit: <input type="time" id="pcEnd"></label>
-    <h3>🎮 Minecraft-Server
-      <span id="mcStatus" class="status offline">Offline</span>
-    </h3>
+    <h2>Login</h2>
+    <label>Benutzername: <input type="text" id="adname"></label>
+    <label>Passwort: <input type="password" id="adpass"></label>
+    <button onclick="login()">Einloggen</button>
+    <p id="loginError" style="color:red;"></p>
+    <h3>🎮 Minecraft-Server</h3>
+	<h4> Vanilla Surivial - 16 Spieler
+		<span id="mcStatus" class="status offline">Offline</span>
+	</h4>
     <label>Startzeit: <input type="time" id="mcStart"></label>
     <label>Endzeit: <input type="time" id="mcEnd"></label>
+	<h3>🎮 Garry's Mod-Server</h3>
+	<h4> TTT2 - 16 Spieler
+		<span id="mcStatus" class="status offline">Offline</span>
+	</h4>
     <button onclick="saveSettings()">Speichern</button>
     <p id="statusMessage" style="color:green;"></p>
   </div>
   <script>
     const validUser = "admin";
     const validPass = "passwort123";
+	const validAdmin = "wurm";
+	const validAdpass = "admin123";
     function login() {
       const user = document.getElementById("username").value;
       const pass = document.getElementById("password").value;
+	  const admin = document.getElementById("adname").value;
+	  const adpass = document.getElementById("adpassword").value;
       if (user === validUser && pass === validPass) {
         document.getElementById("login").classList.add("hidden");
+        document.getElementById("main").classList.remove("hidden");
+        updateStatus(); // Status beim Login aktualisieren
+      } else {
+        document.getElementById("loginError").textContent = "Falsche Zugangsdaten!";
+      }
+	  if (admin === validAdmin && adpass === validAdpass) {
+        document.getElementById("main").classList.add("hidden");
         document.getElementById("main").classList.remove("hidden");
         updateStatus(); // Status beim Login aktualisieren
       } else {
