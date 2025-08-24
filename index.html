@@ -32,7 +32,7 @@
   <!-- Hauptseite -->
   <div id="main" class="hidden">
     <h2>Systemsteuerung</h2>
-    <h3>🖥️ PC
+    <h3>🖥️ PC (automatisch aktiv, bei Serverstart)
       <span id="pcStatus" class="status offline">Offline</span>
     </h3>
     <h4>Login</h4>
@@ -54,6 +54,18 @@
     <label>Endzeit: <input type="time" id="ttt2End"></label>
     <button onclick="saveSettings()">Speichern</button>
     <p id="statusMessage" style="color:green;"></p>
+	<button onclick="backLogin()">Zurück</button>
+  </div>
+  <!-- Adminseite PC -->
+  <div id="adminPC" class="hidden">
+  <h3>🖥️ PC
+		<span id="pcStatus" class="status offline">Offline</span>
+  </h3>
+	<label>Startzeit: <input type="time" id="mcStart"></label>
+	<label>Endzeit: <input type="time" id="mcEnd"></label>
+	<button onclick="saveSettings()">Speichern</button>
+    <p id="statusMessage" style="color:green;"></p>
+	<button onclick="backMain()">Zurück</button>
   </div>
   </body>
   
@@ -79,6 +91,8 @@ window.adLogin = function() {
   const admin = document.getElementById("adname").value;
   const adpass = document.getElementById("adpassword").value;
   if (admin === validAdmin && adpass === validAdpass) {
+	document.getElementById("main").classList.add("hidden");
+    document.getElementById("adminPC").classList.remove("hidden");
     updateStatus();
   } else {
     document.getElementById("adminLoginError").textContent = "Falsche Zugangsdaten!";
@@ -86,14 +100,26 @@ window.adLogin = function() {
 };
 
 window.saveSettings = function() {
+  const pcStart = document.getElementById("pcStart").value;
+  const pcEnd = document.getElementById("pcEnd").value;
   const mcStart = document.getElementById("mcStart").value;
   const mcEnd = document.getElementById("mcEnd").value;
   const ttt2Start = document.getElementById("ttt2Start").value;
   const ttt2End = document.getElementById("ttt2End").value;
 
+  console.log("PC Start:", pcStart, "Ende:", pcEnd);
   console.log("MC Start:", mcStart, "Ende:", mcEnd);
   console.log("TTT2 Start:", ttt2Start, "Ende:", ttt2End);
   document.getElementById("statusMessage").textContent = "Einstellungen gespeichert!";
+};
+
+window.backMain = function() {
+	document.getElementById("adminPC").classList.add("hidden");
+    document.getElementById("main").classList.remove("hidden");
+};
+window.backLogin = function() {
+	document.getElementById("main").classList.add("hidden");
+    document.getElementById("login").classList.remove("hidden");
 };
 
 window.updateStatus = function() {
