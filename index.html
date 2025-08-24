@@ -118,7 +118,7 @@ window.adLogin = function() {
   const admin = document.getElementById("adname").value;
   const adpass = document.getElementById("adpassword").value;
   if (admin === validAdmin && adpass === validAdpass) {
-	document.getElementById("main").classList.add("hidden");
+	document.getElementById("login").classList.add("hidden");
     document.getElementById("adminPC").classList.remove("hidden");
     updateStatus();
   } else {
@@ -154,6 +154,7 @@ window.backStart = function() {
 }; */
 window.backLogin = function() {
 	document.getElementById("main").classList.add("hidden");
+	document.getElementById("adminPC").classList.add("hidden");
     document.getElementById("login").classList.remove("hidden");
 };
 
