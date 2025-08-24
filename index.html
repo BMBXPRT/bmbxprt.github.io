@@ -58,79 +58,77 @@
   </body>
   
   <script>
-    const validUser = "admin";
-    const validPass = "passwort123";
-	const validAdmin = "wurm";
-	const validAdpass = "admin123";
-    function login() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-      if (user === validUser && pass === validPass) {
-        document.getElementById("login").classList.add("hidden");
-        document.getElementById("main").classList.remove("hidden");
-        updateStatus(); // Status beim Login aktualisieren
-      } else {
-        document.getElementById("loginError").textContent = "Falsche Zugangsdaten!";
-      }
-	}
-	 function adLogin() {
-	  const admin = document.getElementById("adname").value;
-	  const adpass = document.getElementById("adpassword").value;
-	  if (admin === validAdmin && adpass === validAdpass) {
-        //document.getElementById("main").classList.add("hidden");
-        //document.getElementById("main").classList.remove("hidden");
-        updateStatus(); // Status beim Login aktualisieren
-      } else {
-        document.getElementById("adminLoginError").textContent = "Falsche Zugangsdaten!";
-      }
-    }
-    function saveSettings() {
-      //const pcStart = document.getElementById("pcStart").value;
-      //const pcEnd = document.getElementById("pcEnd").value;
-      const mcStart = document.getElementById("mcStart").value;
-      const mcEnd = document.getElementById("mcEnd").value;
-	  const ttt2Start = document.getElementById("ttt2Start").value;
-	  const ttt2End = document.getElementById("ttt2End").value;
-      // Hier würdest du die Daten ans Backend senden
-      //console.log("PC Start:", pcStart, "Ende:", pcEnd);
-      console.log("MC Start:", mcStart, "Ende:", mcEnd);
-	  console.log("TTT2 Start:", ttt2Start, "Ende:", ttt2End);
-      document.getElementById("statusMessage").textContent = "Einstellungen gespeichert!";
-    }
-    function updateStatus() {
-      // Diese Funktion simuliert den Status. Später durch echte API ersetzen!
-      const pcOnline = true;  // Beispielwert
-      const mcOnline = false; // Beispielwert
-	  const ttt2Online = true;
-      const pcStatus = document.getElementById("pcStatus");
-      const mcStatus = document.getElementById("mcStatus");
-	  const ttt2Status = document.getElementById("ttt2Status");
-      if (pcOnline) {
-        pcStatus.textContent = "Online";
-        pcStatus.classList.remove("offline");
-        pcStatus.classList.add("online");
-      } else {
-        pcStatus.textContent = "Offline";
-        pcStatus.classList.remove("online");
-        pcStatus.classList.add("offline");
-      }
-      if (mcOnline) {
-        mcStatus.textContent = "Online";
-        mcStatus.classList.remove("offline");
-        mcStatus.classList.add("online");
-      } else {
-        mcStatus.textContent = "Offline";
-        mcStatus.classList.remove("online");
-        mcStatus.classList.add("offline");
-      }
-	  if (ttt2Online) {
-        ttt2Status.textContent = "Online";
-        ttt2Status.classList.remove("offline");
-        ttt2Status.classList.add("online");
-      } else {
-        ttt2Status.textContent = "Offline";
-        ttt2Status.classList.remove("online");
-        ttt2Status.classList.add("offline");
-    }
+   window.login = function() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+  if (user === validUser && pass === validPass) {
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("main").classList.remove("hidden");
+    updateStatus(); // Status beim Login aktualisieren
+  } else {
+    document.getElementById("loginError").textContent = "Falsche Zugangsdaten!";
+  }
+};
+
+window.adLogin = function() {
+  const admin = document.getElementById("adname").value;
+  const adpass = document.getElementById("adpassword").value;
+  if (admin === validAdmin && adpass === validAdpass) {
+    updateStatus();
+  } else {
+    document.getElementById("adminLoginError").textContent = "Falsche Zugangsdaten!";
+  }
+};
+
+window.saveSettings = function() {
+  const mcStart = document.getElementById("mcStart").value;
+  const mcEnd = document.getElementById("mcEnd").value;
+  const ttt2Start = document.getElementById("ttt2Start").value;
+  const ttt2End = document.getElementById("ttt2End").value;
+
+  console.log("MC Start:", mcStart, "Ende:", mcEnd);
+  console.log("TTT2 Start:", ttt2Start, "Ende:", ttt2End);
+  document.getElementById("statusMessage").textContent = "Einstellungen gespeichert!";
+};
+
+window.updateStatus = function() {
+  const pcOnline = true;
+  const mcOnline = false;
+  const ttt2Online = true;
+
+  const pcStatus = document.getElementById("pcStatus");
+  const mcStatus = document.getElementById("mcStatus");
+  const ttt2Status = document.getElementById("ttt2Status");
+
+  if (pcOnline) {
+    pcStatus.textContent = "Online";
+    pcStatus.classList.remove("offline");
+    pcStatus.classList.add("online");
+  } else {
+    pcStatus.textContent = "Offline";
+    pcStatus.classList.remove("online");
+    pcStatus.classList.add("offline");
+  }
+
+  if (mcOnline) {
+    mcStatus.textContent = "Online";
+    mcStatus.classList.remove("offline");
+    mcStatus.classList.add("online");
+  } else {
+    mcStatus.textContent = "Offline";
+    mcStatus.classList.remove("online");
+    mcStatus.classList.add("offline");
+  }
+
+  if (ttt2Online) {
+    ttt2Status.textContent = "Online";
+    ttt2Status.classList.remove("offline");
+    ttt2Status.classList.add("online");
+  } else {
+    ttt2Status.textContent = "Offline";
+    ttt2Status.classList.remove("online");
+    ttt2Status.classList.add("offline");
+  }
+};
   </script>
 </html>
