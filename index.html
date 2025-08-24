@@ -21,6 +21,19 @@
   </style>
 </head>
 <body>
+  <!-- Startseite -->
+  <div id="startSite">
+	<h2>Server Status</h2>
+	<h3>🎮 Minecraft - Server</h3>
+	<h4> Vanilla Survival - 16 Spieler
+		<span id="mcStatus" class="status offline">Offline</span>
+	</h4>
+	<h3>🎮 Garry's Mod - Server</h3>
+	<h4> TTT2 - 16 Spieler
+		<span id="ttt2Status" class="status offline">Offline</span>
+	</h4>
+	<h3>Admins</h3>
+	<button onclick="loginSite()">Einloggen</button>
   <!-- Login-Bereich -->
   <div id="login">
     <h2>Login</h2>
@@ -28,6 +41,12 @@
     <label>Passwort: <input type="password" id="password"></label>
     <button onclick="login()">Einloggen</button>
     <p id="loginError" style="color:red;"></p>
+	<h2>Admin-Login</h2>
+	<label>Benutzername: <input type="text" id="adname"></label>
+    <label>Passwort: <input type="password" id="adpassword"></label>
+    <button onclick="adLogin()">Einloggen</button>
+    <p id="adminLoginError" style="color:red;"></p>
+	<button onclick="backMain()">Zurück</button>
   </div>
   <!-- Hauptseite -->
   <div id="main" class="hidden">
@@ -35,11 +54,6 @@
     <h3>🖥️ PC (automatisch aktiv, bei Serverstart)
       <span id="pcStatus" class="status offline">Offline</span>
     </h3>
-    <h4>Login</h4>
-    <label>Benutzername: <input type="text" id="adname"></label>
-    <label>Passwort: <input type="password" id="adpassword"></label>
-    <button onclick="adLogin()">Einloggen</button>
-    <p id="adminLoginError" style="color:red;"></p>
     <h3>🎮 Minecraft - Server</h3>
 	<h4> Vanilla Survival - 16 Spieler
 		<span id="mcStatus" class="status offline">Offline</span>
@@ -63,9 +77,21 @@
   </h3>
 	<label>Startzeit: <input type="time" id="mcStart"></label>
 	<label>Endzeit: <input type="time" id="mcEnd"></label>
-	<button onclick="saveSettings()">Speichern</button>
+	 <h3>🎮 Minecraft - Server</h3>
+	<h4> Vanilla Survival - 16 Spieler
+		<span id="mcStatus" class="status offline">Offline</span>
+	</h4>
+    <label>Startzeit: <input type="time" id="mcStart"></label>
+    <label>Endzeit: <input type="time" id="mcEnd"></label>
+	<h3>🎮 Garry's Mod - Server</h3>
+	<h4> TTT2 - 16 Spieler
+		<span id="ttt2Status" class="status offline">Offline</span>
+	</h4>
+	<label>Startzeit: <input type="time" id="ttt2Start"></label>
+    <label>Endzeit: <input type="time" id="ttt2End"></label>
+    <button onclick="saveSettings()">Speichern</button>
     <p id="statusMessage" style="color:green;"></p>
-	<button onclick="backMain()">Zurück</button>
+	<button onclick="backLogin()">Zurück</button>
   </div>
   </body>
   
@@ -113,10 +139,18 @@ window.saveSettings = function() {
   document.getElementById("statusMessage").textContent = "Einstellungen gespeichert!";
 };
 
-window.backMain = function() {
+window.loginSite = function() {
+	document.getElementById("startSite").classList.add("hidden");
+    document.getElementById("login").classList.remove("hidden");
+};
+window.backStart = function() {
+	document.getElementById("login").classList.add("hidden");
+    document.getElementById("startSite").classList.remove("hidden");
+};
+/*window.backMain = function() {
 	document.getElementById("adminPC").classList.add("hidden");
     document.getElementById("main").classList.remove("hidden");
-};
+}; */
 window.backLogin = function() {
 	document.getElementById("main").classList.add("hidden");
     document.getElementById("login").classList.remove("hidden");
